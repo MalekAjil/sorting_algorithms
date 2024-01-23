@@ -19,12 +19,13 @@ void insertion_sort_list(listint_t **list)
 		{
 			tmp = itm->prev;
 			itm->prev = tmp->prev;
-			if (tmp->prev)
-				tmp->prev->next = itm;
-			else
-				*list = tmp;
 			tmp->next = itm->next;
+			itm->next->prev = tmp;
+			itm->prev = tmp->prev;
+			if (!itm->prev)
+				*list = itm;
 			itm->next = tmp;
+			tmp->prev = itm;
 			print_list(*list);
 		}
 	}
