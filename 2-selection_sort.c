@@ -1,5 +1,4 @@
 #include "sort.h"
-#define MAX_INT 99999999
 
 /**
  * selection_sort - sorts an array of integers in ascending order
@@ -11,10 +10,11 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t i = 1, j = 0, idx = 0;
-	int t, min = MAX_INT;
+	int t, min;
 
 	for (j = 0; j < size; j++)
 	{
+		min = array[j];
 		for (i = j + 1; i < size; i++)
 			if (min > array[i])
 			{
@@ -27,7 +27,6 @@ void selection_sort(int *array, size_t size)
 			array[j] = array[idx];
 			array[idx] = t;
 			print_array(array, size);
-			min = MAX_INT;
 		}
 	}
 }
