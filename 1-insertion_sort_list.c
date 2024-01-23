@@ -24,7 +24,8 @@ void insertion_sort_list(listint_t **list)
 		else
 		{
 			listint_t *p = new;
-			while(p != NULL)
+
+			while (p != NULL)
 			{
 				if (p->next == NULL || itm->n < p->next->n)
 				{
