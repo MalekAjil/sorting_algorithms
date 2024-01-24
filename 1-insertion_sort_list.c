@@ -34,7 +34,7 @@ void insertion_sort_list(listint_t **list)
 		A = cur;
 		B = cur->next;
 		cur = cur->next;
-		while (A && A->n > B->n)
+		while (A && B && A->n > B->n)
 		{
 			swap(A, B);
 			if (!B->prev)
