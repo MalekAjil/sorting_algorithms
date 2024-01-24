@@ -1,5 +1,10 @@
 #include "sort.h"
 
+/**
+ * swap - swaps two list elements
+ * @A: pointer1
+ * @B: pointer2
+ */
 void swap(listint_t *A, listint_t *B)
 {
 	A->next = B->next;
